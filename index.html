@@ -38,8 +38,8 @@
         <ul>
           <li>SPA</li>
           <li>SPA pros and cons</li>
-          <li>React Router</li>
           <li>SSR</li>
+          <li>React Router</li>
         </ul>
       </section>
       <section>
@@ -91,6 +91,29 @@
         </ul>
       </section>
       <section>
+        <h2>SSR*</h2>
+        <small>*Server-Side rendering</small>
+      </section>
+      <section>
+        <h3>SSR</h3>
+        <blockquote>Server-side rendering (SSR) is a popular technique for rendering a normally client-side only single page app (SPA) on the server and then sending a fully rendered page to the client. The client’s JavaScript bundle can then take over and the SPA can operate as normal.</blockquote>
+      </section>
+      <section>
+        <h3>Why SSR?</h3>
+        <ul>
+          <li>SEO optimization</li>
+          <li>Performance</li>
+        </ul>
+      </section>
+      <section>
+        <h3>SSR Examples</h3>
+        <ul>
+          <li><a href="https://reactjs.org/docs/react-dom-server.html">ReactDOMServer</a></li>
+          <li><a href="https://www.electrode.io/">Electrode</a></li>
+        </ul>
+        <p><small>and many more...</small></p>
+      </section>
+      <section>
         <h2>React Router*</h2>
         <small><a href="https://reacttraining.com/react-router/web/guides/quick-start">*Quick Start</a></small>
       </section>
@@ -124,36 +147,36 @@
       </section>
       <section>
         <p>define router</p>
-        <pre><code data-trim class="JavaScript">
+        <pre><code data-trim class="hljs">
             import React from 'react'
             import ReactDOM from 'react-dom'
             import { BrowserRouter as Router } from 'react-router-dom'
 
             ReactDOM.render(
-            <Router>
-              <div>
-                <!-- -->
-              </div>
-            </Router>,
+            &lt;Router&gt;
+              &lt;div&gt;
+                &lt;!-- --&gt;
+              &lt;/div&gt;
+            &lt;/Router&gt;,
             document.getElementById('app'));
         </code></pre>
       </section>
       <section>
         <p>define links</p>
-        <pre><code data-trim class="JavaScript">
+        <pre><code data-trim class="hljs">
             import React from 'react'
             import ReactDOM from 'react-dom'
             import { BrowserRouter as Router, Link } from 'react-router-dom'
 
             ReactDOM.render(
-            <Router>
-              <div>
-                <aside>
-                  <Link to='/dashboard'>Dashboard</Link>
-                  <Link to='/about'>About</Link>
-                </aside>
-              </div>
-            </Router>,
+            &lt;Router&gt;
+              &lt;div&gt;
+                &lt;aside&gt;
+                  &lt;Link to='/dashboard'&gt;Dashboard&lt;/Link&gt;
+                  &lt;Link to='/about'&gt;About&lt;/Link&gt;
+                &lt;/aside&gt;
+              &lt;/div&gt;
+            &lt;/Router&gt;,
             document.getElementById('app'));
         </code></pre>
       </section>
@@ -167,92 +190,69 @@
       </section>
       <section>
         <p>define components</p>
-        <pre><code data-trim class="JavaScript">
+        <pre><code data-trim class="hljs">
             const Dashboard = () => (
-            <div>
-                <h2>Dashboard</h2>
+            &lt;div&gt;
+                &lt;h2&gt;Dashboard&lt;/h2&gt;
                 ...
-            </div>)
+            &lt;/div&gt;)
 
-            const About = () => (
-            <div>
-                <h2>About</h2>
+            const About = () =&gt; (
+            &lt;div&gt;
+                &lt;h2&gt;About&lt;/h2&gt;
                 ...
-            </div>)
+            &lt;/div&gt;)
         </code></pre>
       </section>
       <section>
         <p>use components</p>
-        <pre><code data-trim class="JavaScript">
-          <Router>
-            <aside>
-              <Link to={`/`}>Dashboard</Link>
-              <Link to={`/about`}>About</Link>
-            </aside>
+        <pre><code data-trim class="hljs">
+          &lt;Router&gt;
+            &lt;aside&gt;
+              &lt;Link to={`/`}&gt;Dashboard&lt;/Link&gt;
+              &lt;Link to={`/about`}&gt;About&lt;/Link&gt;
+            &lt;/aside&gt;
     
-            <Route exact path="/">
-              <Dashboard></Dashboard>
-            </Route>
-            <Route path="/about">
-              <About></About>
-            </Route>
-          </Router>
+            &lt;Route exact path="/"&gt;
+              &lt;Dashboard&gt;&lt;/Dashboard&gt;
+            &lt;/Route&gt;
+            &lt;Route path="/about"&gt;
+              &lt;About&gt;&lt;/About&gt;
+            &lt;/Route&gt;
+          &lt;/Router&gt;
         </code></pre>
       </section>
       <section>
         <p>match dynamic parameter</p>
-        <pre><code data-trim class="JavaScript">
+        <pre><code data-trim class="hljs">
             const Post = () => {
             const { id } = useParams();
             // or
             const matchedId = useRouteMatch("/post/:id");
             return (
-              <div>
-                <h2>Post #{id} or {matchedId}</h2>
+              &lt;div&gt;
+                &lt;h2&gt;Post #{id} or {matchedId}&lt;/h2&gt;
                 ...
-              </div>);
+              &lt;/div&gt;);
             }
             //...
-            <Route exact path="/post/:id">
-              <Post></Post>
-            </Route>
+            &lt;Route exact path="/post/:id"&gt;
+              &lt;Post&gt;&lt;/Post&gt;
+            &lt;/Route&gt;
         </code></pre>
       </section>
       <section>
         <p>exact matching</p>
-        <pre><code data-trim class="JavaScript">
-          <Switch>
-            <Route path="/">
-              <Dashboard></Dashboard>
-            </Route>
-            <Route path="/about">
-              <About></About>
-            </Route>
-          </Switch>
+        <pre><code data-trim class="hljs">
+          &lt;Switch&gt;
+            &lt;Route path="/"&gt;
+              &lt;Dashboard&gt;&lt;/Dashboard&gt;
+            &lt;/Route&gt;
+            &lt;Route path="/about"&gt;
+              &lt;About&gt;&lt;/About&gt;
+            &lt;/Route&gt;
+          &lt;/Switch&gt;
         </code></pre>
-      </section>
-      <section>
-        <h2>SSR*</h2>
-        <small>*Server-Side rendering</small>
-      </section>
-      <section>
-        <h3>SSR</h3>
-        <blockquote>Server-side rendering (SSR) is a popular technique for rendering a normally client-side only single page app (SPA) on the server and then sending a fully rendered page to the client. The client’s JavaScript bundle can then take over and the SPA can operate as normal.</blockquote>
-      </section>
-      <section>
-        <h3>Why SSR?</h3>
-        <ul>
-          <li>SEO optimization</li>
-          <li>Performance</li>
-        </ul>
-      </section>
-      <section>
-        <h3>SSR Examples</h3>
-        <ul>
-          <li><a href="https://reactjs.org/docs/react-dom-server.html">ReactDOMServer</a></li>
-          <li><a href="https://www.electrode.io/">Electrode</a></li>
-        </ul>
-        <p><small>and many more...</small></p>
       </section>
       <section>
         <h2>Thank you for listening!</h2>
