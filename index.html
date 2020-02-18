@@ -36,9 +36,9 @@
       <section>
         <h3>Agenda</h3>
         <ul>
-          <li>SPA</li>
-          <li>SPA pros and cons</li>
-          <li>SSR</li>
+          <li>Single-Page Application</li>
+          <li>Single-Page Application Pros and Cons</li>
+          <li>Server Side redering</li>
           <li>React Router</li>
         </ul>
       </section>
@@ -88,6 +88,7 @@
           <li>Poor link sharing capability.</li>
           <li>Poor app performance on low-end devices.</li>
           <li>Security issues.</li>
+          <li>A/B testing is difficult.</li>
         </ul>
       </section>
       <section>
@@ -124,6 +125,7 @@
           <li>Deep linking should work​.</li>
           <li>Browser navigation should work like expected.</li>
           <li>React-like programming style.</li>
+          <li>Server side redering.</li>
         </ul>
       </section>
       <section>
@@ -252,6 +254,29 @@
               &lt;About&gt;&lt;/About&gt;
             &lt;/Route&gt;
           &lt;/Switch&gt;
+        </code></pre>
+      </section>
+      <section>
+        <h3>Server Side Rendering</h3>
+        <small>
+          <a href="https://reacttraining.com/react-router/web/guides/server-rendering">https://reacttraining.com/react-router/web/guides/server-rendering</a>
+        </small>
+      </section>
+      <section>
+        <p>using StaticRouter</p>
+        <pre><code data-trim class="hljs">
+          // client
+          &lt;BrowserRouter&gt;
+            &lt;App/&gt;
+          &lt;/BrowserRouter&gt;
+        </code></pre>
+        <pre><code data-trim class="hljs">
+          &lt;StaticRouter
+            location={req.url}
+            context={context}
+          &gt;
+            &lt;App/&gt;
+          &lt;/StaticRouter&gt;
         </code></pre>
       </section>
       <section>
